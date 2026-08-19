@@ -1,2 +1,7 @@
 # TP-integrador-info-II
 Trabajo práctico integrador de Juan Lisouski del curso 2°11, para la materia Informática II.
+
+Sistema antirrobo para auto
+El trabajo práctico consistirá de un sistema que podrá bloquear el flujo de corriente a la bobina de encendido del auto, mediante un relé. Este mecanismo contara con un botón escondido, que si no es presionado tras cierto tiempo de ser encendido el auto o de ser abierta la puerta del conductor, cortará la corriente, impidiendo el arranque del motor.
+
+![Diagrama de maquina de estado](recursos/Diagrama-maquina-de-estado.png)
