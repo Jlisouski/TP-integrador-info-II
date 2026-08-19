@@ -1,3 +1,4 @@
+<img width="800" height="600" alt="Diagrama maquina de estado" src="https://github.com/user-attachments/assets/86aced80-b105-471b-a3f9-75ed884a5d8f" />
 # TP-integrador-info-II
 Trabajo práctico integrador de Juan Lisouski del curso 2°11, para la materia Informática II.
 
