@@ -4,8 +4,7 @@ Trabajo práctico integrador de Juan Lisouski del curso 2°11, para la materia I
 ## Sistema antirrobo para auto
 El trabajo práctico consistirá de un sistema que podrá bloquear el flujo de corriente a la bobina de encendido del auto, mediante un relé (normalmente cerrado). Este mecanismo contara con un botón escondido, que si no es presionado tras cierto tiempo de ser encendido el auto o de ser abierta la puerta del conductor, cortará la corriente, impidiendo el arranque del motor.
 
-<img width="800" height="600" alt="Diagrama maquina de estado" src="https://github.com/user-attachments/assets/86aced80-b105-471b-a3f9-75ed884a5d8f" />
-
+<img width="1000" height="600" alt="Diagrama maquina de estado" src="https://github.com/user-attachments/assets/f89077e3-03bc-427f-9bcd-e54dddb1c3a0" />
 
  **Explicación de variables y constante:**
 
@@ -24,10 +23,13 @@ El trabajo práctico consistirá de un sistema que podrá bloquear el flujo de c
 
  **Explicación de estados:**
 
- <ins> Inicio:</ins> Estado inicial del sistema, en el cual se evaluará el valor de la variable "mem".
+<ins> Inicio:</ins> Estado inicial del microcontrolador.
 
- <ins> Estado 1:</ins> En este estado, el valor de las variables relay=1, y mem=1. Si boton=0, significa que el boton no ha sido presionado, y el sistema se mantendrá en este estado, impidiendo encender el motor. Si boton=1, significa que ha sido presionado el boton, y se procederá al estado 2.
+ <ins> Estado_memoria:</ins> Estado inicial del sistema, en el cual se evaluará el valor de la variable "mem".
 
- <ins> Estado 2:</ins> En este estado, el valor de las variables relay=0, mem=0 y tiempo=0. Esto significa que se podrá encender el auto. Si puerta=1, la puerta esta cerrada, y el sistema se mantendría en este estado; si puerta=0, la puerta se encuentra abierta y se prosigue al estado 3.
+ <ins> Estado_bloqueo:</ins> En este estado, el valor de las variables relay=1 (bloqueando el encendido del motor), y mem=1. Si boton=0, significa que el boton no ha sido presionado, 
+y el sistema se mantendrá en este estado. Si boton=1, significa que ha sido presionado el boton, y se procederá a Estado_habilitado.
 
- <ins> Estado 3:</ins> En este estado, el valor de mem=1. La variable "tiempo" comenzaría a contar, y su valor se comparará constantemente con "t_set". Si tiempo<t_set, sigue en el mismo estado; si tiempo>t_set, prosigue al estado 1.
+ <ins> Estado_habilitado:</ins> En este estado, el valor de las variables relay=0 (Habilitando el encendido del motor), mem=0 y tiempo=0. Esto significa que se podrá encender el auto. Si puerta=1, la puerta esta cerrada, y el sistema se mantendría en este estado; si puerta=0, la puerta se encuentra abierta y se prosigue a Estado_contador.
+
+ <ins> Estado_contador:</ins> En este estado, el valor de mem=1. La variable "tiempo" comenzaría a contar, y su valor se comparará constantemente con "t_set". Si tiempo<t_set, sigue en el mismo estado; si tiempo>t_set, prosigue a Estado_bloqueo.
