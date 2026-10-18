@@ -1,21 +1,21 @@
 #include "lib.h"
 
 int main(){
-    estados_t estado = memoria;
     alarma_t alarma;
-    
+    alarma.estado = memoria;
     alarma = inicio();
 
     while(1){
-        switch(estado){
-            case memoria: f_memoria(alarma);
+        switch(alarma.estado){
+            case memoria: alarma.estado = f_memoria(alarma);
                 break;
-            case bloqueo: f_bloqueo(alarma);
+            case bloqueo: alarma.estado = f_bloqueo(alarma);
                 break;
-            case habilitado: f_habilitado(alarma);
+            case habilitado: alarma.estado = f_habilitado(alarma);
                 break;
-            case contador: f_contador(alarma);
+            case contador: alarma.estado = f_contador(alarma);
                 break;
         }
     }
+    return 0;
 }   
