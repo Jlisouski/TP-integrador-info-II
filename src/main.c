@@ -7,13 +7,13 @@ int main(){
 
     while(1){
         switch(alarma.estado){
-            case memoria: alarma.estado = f_memoria(alarma);
+            case memoria: alarma = f_memoria(alarma);
                 break;
-            case bloqueo: alarma.estado = f_bloqueo(alarma);
+            case bloqueo: alarma = f_bloqueo(alarma);
                 break;
-            case habilitado: alarma.estado = f_habilitado(alarma);
+            case habilitado: alarma = f_habilitado(alarma);
                 break;
-            case contador: alarma.estado = f_contador(alarma);
+            case contador: alarma = f_contador(alarma);
                 break;
         }
     }
